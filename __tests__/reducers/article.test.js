@@ -1,19 +1,14 @@
 import article from '../../src/reducers/article';
-import * as types from '../../src/constants/actionTypes';
+import articleListJson from '../data/articleList'; 
+import {
+    ARTICLE_PAGE_LOADED,
+    ARTICLE_PAGE_UNLOADED,
+    ADD_COMMENT,
+    DELETE_COMMENT
+} from '../../src/constants/actionTypes';
 
 describe('article reducer', () => {
-    const testArticle = {
-        author: {username: "hadi123", bio: null, image: "https://static.productionready.io/images/smiley-cyrus.jpg", following: false},
-        body: "dasd",
-        createdAt: "2019-06-28T16:08:00.557Z",
-        description: "description",
-        favorited: false,
-        favoritesCount: 0,
-        slug: "asdsd-66ycdn",
-        tagList: [],
-        title: "title",
-        updatedAt: "2019-06-28T16:08:00.557Z",
-    };
+    const testArticle = articleListJson.articles[0];
     const firstComment = {
         author: {username: "xoxach", bio: null, image: "https://static.productionready.io/images/smiley-cyrus.jpg", following: false},
         body: "firstComment",
@@ -35,7 +30,7 @@ describe('article reducer', () => {
 
     it('ARTICLE_PAGE_LOADED', () => {
         const action = {
-            type: types.ARTICLE_PAGE_LOADED,
+            type: ARTICLE_PAGE_LOADED,
             payload: [
                 {article: testArticle},
                 {comments: []}
@@ -47,7 +42,7 @@ describe('article reducer', () => {
     });
 
     it('ARTICLE_PAGE_UNLOADED', () => {
-        expect(article({}, {type: types.ARTICLE_PAGE_UNLOADED})).toEqual({})
+        expect(article({}, {type: ARTICLE_PAGE_UNLOADED})).toEqual({})
     });
 
     it('ADD_COMMENT in case of error', () => {
@@ -56,7 +51,7 @@ describe('article reducer', () => {
             status: "400"
         };
         const addComment = {
-            type: types.ADD_COMMENT,
+            type: ADD_COMMENT,
             error: true,
             payload: error
         }
@@ -69,7 +64,7 @@ describe('article reducer', () => {
 
     it('ADD_COMMENT in case of seccess', () => {
         const createCommentActionCreator = (comment) => ({
-            type: types.ADD_COMMENT,
+            type: ADD_COMMENT,
             payload: {comment}
         });
         const expectedValueInFirstCase = {
@@ -87,7 +82,7 @@ describe('article reducer', () => {
 
     it('DELETE_COMMENT', () => {
         const deleteCommentActionCreator = (commentId) => ({
-            type: types.DELETE_COMMENT,
+            type: DELETE_COMMENT,
             commentId
         });
         const initialState = {
@@ -107,4 +102,4 @@ describe('article reducer', () => {
         expect(article(expectedValueInFirstCase, deleteCommentActionCreator(secondComment.id))).toEqual({article: testArticle, comments: []});
         expect(article(expectedValueInSecondCase, deleteCommentActionCreator(secondComment.id))).toEqual({article: testArticle, comments: []});
     });
-})
+});

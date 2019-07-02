@@ -1,0 +1,126 @@
+{
+    "articles": [
+        {
+            "author": {"username": "Herquiloide", "bio": null, "image": "https://static.productionready.io/images/smiley-cyrus.jpg", "following": false},
+            "body": "Test 1",
+            "createdAt": "2019-07-02T16:13:07.400Z",
+            "description": "Test 1",
+            "favorited": false,
+            "favoritesCount": 0,
+            "slug": "my-articles-7fs8j0",
+            "tagList": [],
+            "title": "My Article",
+            "updatedAt": "2019-07-02T16:13:25.317Z"
+        },
+        {
+            "author": {"username": "Herquiloide", "bio": null, "image": "https://static.productionready.io/images/smiley-cyrus.jpg", "following": false},
+            "body": "Test 2",
+            "createdAt": "2019-07-02T16:13:08.400Z",
+            "description": "Test 2",
+            "favorited": false,
+            "favoritesCount": 0,
+            "slug": "my-articles-7fs8j1",
+            "tagList": [],
+            "title": "My Article",
+            "updatedAt": "2019-07-02T16:13:26.317Z"
+        },
+        {
+            "author": {"username": "Herquiloide", "bio": null, "image": "https://static.productionready.io/images/smiley-cyrus.jpg", "following": false},
+            "body": "Test 3",
+            "createdAt": "2019-07-02T16:13:09.400Z",
+            "description": "Test 3",
+            "favorited": false,
+            "favoritesCount": 0,
+            "slug": "my-articles-7fs8j2",
+            "tagList": [],
+            "title": "My Article",
+            "updatedAt": "2019-07-02T16:13:27.317Z"
+        },
+        {
+            "author": {"username": "Herquiloide", "bio": null, "image": "https://static.productionready.io/images/smiley-cyrus.jpg", "following": false},
+            "body": "Test 4",
+            "createdAt": "2019-07-02T16:13:10.400Z",
+            "description": "Test 4",
+            "favorited": false,
+            "favoritesCount": 0,
+            "slug": "my-articles-7fs8j3",
+            "tagList": [],
+            "title": "My Article",
+            "updatedAt": "2019-07-02T16:13:28.317Z"
+        },
+        {
+            "author": {"username": "Herquiloide", "bio": null, "image": "https://static.productionready.io/images/smiley-cyrus.jpg", "following": false},
+            "body": "Test 5",
+            "createdAt": "2019-07-02T16:13:11.400Z",
+            "description": "Test 5",
+            "favorited": false,
+            "favoritesCount": 0,
+            "slug": "my-articles-7fs8j4",
+            "tagList": [],
+            "title": "My Article",
+            "updatedAt": "2019-07-02T16:13:29.317Z"
+        }
+    ],
+    "articles2": [
+        {
+            "author": {"username": "Herquiloide", "bio": null, "image": "https://static.productionready.io/images/smiley-cyrus.jpg", "following": false},
+            "body": "Test 6",
+            "createdAt": "2019-07-02T16:13:12.400Z",
+            "description": "Test 1",
+            "favorited": false,
+            "favoritesCount": 0,
+            "slug": "my-articles-7fs8j5",
+            "tagList": ["dragons"],
+            "title": "My Article",
+            "updatedAt": "2019-07-02T16:13:30.317Z"
+        },
+        {
+            "author": {"username": "Herquiloide", "bio": null, "image": "https://static.productionready.io/images/smiley-cyrus.jpg", "following": false},
+            "body": "Test 7",
+            "createdAt": "2019-07-02T16:13:13.400Z",
+            "description": "Test 2",
+            "favorited": false,
+            "favoritesCount": 0,
+            "slug": "my-articles-7fs8j5",
+            "tagList": ["dragons"],
+            "title": "My Article",
+            "updatedAt": "2019-07-02T16:13:31.317Z"
+        },
+        {
+            "author": {"username": "Herquiloide", "bio": null, "image": "https://static.productionready.io/images/smiley-cyrus.jpg", "following": false},
+            "body": "Test 8",
+            "createdAt": "2019-07-02T16:13:14.400Z",
+            "description": "Test 3",
+            "favorited": false,
+            "favoritesCount": 0,
+            "slug": "my-articles-7fs8j6",
+            "tagList": ["dragons"],
+            "title": "My Article",
+            "updatedAt": "2019-07-02T16:13:32.317Z"
+        },
+        {
+            "author": {"username": "Herquiloide", "bio": null, "image": "https://static.productionready.io/images/smiley-cyrus.jpg", "following": false},
+            "body": "Test 9",
+            "createdAt": "2019-07-02T16:13:15.400Z",
+            "description": "Test 4",
+            "favorited": false,
+            "favoritesCount": 0,
+            "slug": "my-articles-7fs8j7",
+            "tagList": ["dragons"],
+            "title": "My Article",
+            "updatedAt": "2019-07-02T16:13:33.317Z"
+        },
+        {
+            "author": {"username": "Herquiloide", "bio": null, "image": "https://static.productionready.io/images/smiley-cyrus.jpg", "following": false},
+            "body": "Test 10",
+            "createdAt": "2019-07-02T16:13:16.400Z",
+            "description": "Test 5",
+            "favorited": false,
+            "favoritesCount": 0,
+            "slug": "my-articles-7fs8j8",
+            "tagList": ["dragons"],
+            "title": "My Article",
+            "updatedAt": "2019-07-02T16:13:29.347Z"
+        } 
+    ]
+}
