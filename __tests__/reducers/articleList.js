@@ -12,7 +12,7 @@ import {
     PROFILE_FAVORITES_PAGE_LOADED,
     PROFILE_FAVORITES_PAGE_UNLOADED
 } from '../../src/constants/actionTypes';
-import articleListJson from '../data/articleList'; 
+import articleListJson from '../data/articleList';
 
 describe('article reducer', () => {
     let articles;

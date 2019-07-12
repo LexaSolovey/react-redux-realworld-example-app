@@ -1,0 +1,12 @@
+{
+    "user": {
+        "bio": null,
+        "createdAt": "2019-06-27T18:04:40.569Z",
+        "email": "xoxach@mail.ru",
+        "id": 59342,
+        "image": null,
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTkzNDIsInVzZXJuYW1lIjoieG94YWNoIiwiZXhwIjoxNTY4MDQ4MTYyfQ.c-GqQGAOun0YDE0GC7wCDgbNUF0AUewrFDb_zXiBG9Q",
+        "updatedAt": "2019-06-27T18:04:40.574Z",
+        "username": "xoxach"
+    }
+}
