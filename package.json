@@ -6,6 +6,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.8.0",
+    "chai": "^4.2.0",
     "cross-env": "^5.1.4",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -33,7 +34,8 @@
   "scripts": {
     "start": "cross-env PORT=4100 react-scripts start",
     "build": "react-scripts build",
-    "test": "jest test --env=jsdom",
+    "test": "jest",
+    "updateStapshot": "jest --updateSnapshot",
     "test:watch": "npm test -- --coverage",
     "eject": "react-scripts eject"
   }

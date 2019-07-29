@@ -1,29 +1,29 @@
 import React from 'react';
-import agent from '../../agent';
 
-const Tags = props => {
-  const tags = props.tags;
+const Tags = ({tags, fetchArticlesByTag}) => {
+  const callFetchAtricles = (event) => {
+    event.preventDefault();
+
+    const {tagName, attributes} = event.target;
+
+    if(tagName === 'A' && attributes['data-tagname'].value) {
+      fetchArticlesByTag(attributes['data-tagname'].value)
+    }
+  };
+
   if (tags) {
     return (
-      <div className="tag-list">
-        {
-          tags.map(tag => {
-            const handleClick = ev => {
-              ev.preventDefault();
-              props.onClickTag(tag, page => agent.Articles.byTag(tag, page), agent.Articles.byTag(tag));
-            };
-
-            return (
-              <a
-                href=""
-                className="tag-default tag-pill"
-                key={tag}
-                onClick={handleClick}>
-                {tag}
-              </a>
-            );
-          })
-        }
+      <div className="tag-list" onClick={callFetchAtricles}>
+        {tags.map((tag) => (
+            <a
+              href=""
+              className="tag-default tag-pill"
+              key={tag}
+              data-tagname={tag}>
+              {tag}
+            </a>
+          )
+        )}
       </div>
     );
   } else {

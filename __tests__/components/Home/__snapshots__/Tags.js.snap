@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>> Tags component snapshot renders tagsList 1`] = `
+<div
+  className="tag-list"
+  onClick={[Function]}
+>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="butt"
+    href=""
+  >
+    butt
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="dragons"
+    href=""
+  >
+    dragons
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="test"
+    href=""
+  >
+    test
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="training"
+    href=""
+  >
+    training
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="tags"
+    href=""
+  >
+    tags
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="as"
+    href=""
+  >
+    as
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="coffee"
+    href=""
+  >
+    coffee
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="animation"
+    href=""
+  >
+    animation
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="flowers"
+    href=""
+  >
+    flowers
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="caramel"
+    href=""
+  >
+    caramel
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="money"
+    href=""
+  >
+    money
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="cars"
+    href=""
+  >
+    cars
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="baby"
+    href=""
+  >
+    baby
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="happiness"
+    href=""
+  >
+    happiness
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="sushi"
+    href=""
+  >
+    sushi
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="sugar"
+    href=""
+  >
+    sugar
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="clean"
+    href=""
+  >
+    clean
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="japan"
+    href=""
+  >
+    japan
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="cookies"
+    href=""
+  >
+    cookies
+  </a>
+  <a
+    className="tag-default tag-pill"
+    data-tagname="well"
+    href=""
+  >
+    well
+  </a>
+</div>
+`;
+
+exports[`>> Tags component snapshot returns null in case when tags is not exist 1`] = `
+<div>
+  Loading Tags...
+</div>
+`;

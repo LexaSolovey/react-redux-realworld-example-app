@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>> Banner component snapshot null in case when token is exist 1`] = `null`;
+
+exports[`>> Banner component snapshot without token 1`] = `
+<div
+  className="banner"
+>
+  <div
+    className="container"
+  >
+    <h1
+      className="logo-font"
+    >
+      conduit
+    </h1>
+    <p>
+      A place to share your knowledge.
+    </p>
+  </div>
+</div>
+`;

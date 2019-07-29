@@ -41,30 +41,29 @@ class Home extends React.Component {
     this.props.onUnload();
   }
 
+  fetchArticlesByTag = (tag) => {
+    this.props.onClickTag(tag, page => agent.Articles.byTag(tag, page), agent.Articles.byTag(tag));
+  };
+
   render() {
     return (
       <div className="home-page">
-
         <Banner token={this.props.token} appName={this.props.appName} />
-
         <div className="container page">
           <div className="row">
             <MainView />
-
             <div className="col-md-3">
               <div className="sidebar">
-
                 <p>Popular Tags</p>
-
                 <Tags
                   tags={this.props.tags}
-                  onClickTag={this.props.onClickTag} />
-
+                  onClickTag={this.props.onClickTag}
+                  fetchArticlesByTag={this.fetchArticlesByTag}
+                />
               </div>
             </div>
           </div>
         </div>
-
       </div>
     );
   }

@@ -1,5 +1,10 @@
 module.exports = {
-  verbose: true,
-//   collectCoverage: true,
-//   collectCoverageFrom: ["**/*.{js,jsx}"]
-};
+    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"],
+    "collectCoverage": true,
+    "moduleFileExtensions": [
+        "js",
+        "jsx",
+        "json",
+        "node"
+    ],
+}
