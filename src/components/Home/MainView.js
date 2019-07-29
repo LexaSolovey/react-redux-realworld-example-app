@@ -4,7 +4,7 @@ import agent from '../../agent';
 import { connect } from 'react-redux';
 import { CHANGE_TAB } from '../../constants/actionTypes';
 
-const YourFeedTab = props => {
+export const YourFeedTab = props => {
   if (props.token) {
     const clickHandler = ev => {
       ev.preventDefault();
@@ -13,7 +13,7 @@ const YourFeedTab = props => {
 
     return (
       <li className="nav-item">
-        <a  href=""
+        <a href=""
             className={ props.tab === 'feed' ? 'nav-link active' : 'nav-link' }
             onClick={clickHandler}>
           Your Feed
@@ -24,7 +24,7 @@ const YourFeedTab = props => {
   return null;
 };
 
-const GlobalFeedTab = props => {
+export const GlobalFeedTab = props => {
   const clickHandler = ev => {
     ev.preventDefault();
     props.onTabClick('all', agent.Articles.all, agent.Articles.all());
@@ -41,7 +41,7 @@ const GlobalFeedTab = props => {
   );
 };
 
-const TagFilterTab = props => {
+export const TagFilterTab = props => {
   if (!props.tag) {
     return null;
   }
@@ -61,11 +61,11 @@ const mapStateToProps = state => ({
   token: state.common.token
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onTabClick: (tab, pager, payload) => dispatch({ type: CHANGE_TAB, tab, pager, payload })
 });
 
-const MainView = props => {
+export const MainView = props => {
   return (
     <div className="col-md-9">
       <div className="feed-toggle">

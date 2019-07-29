@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>> MainView container snapshot GlobalFeedTab should render the conponent if the token exists 1`] = `
+<li
+  className="nav-item"
+>
+  <a
+    className="nav-link"
+    href=""
+    onClick={[Function]}
+  >
+    Global Feed
+  </a>
+</li>
+`;
+
+exports[`>> MainView container snapshot MainView 1`] = `
+<div
+  className="col-md-9"
+>
+  <div
+    className="feed-toggle"
+  >
+    <ul
+      className="nav nav-pills outline-active"
+    >
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-link active"
+          href=""
+          onClick={[Function]}
+        >
+          Your Feed
+        </a>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          href=""
+          onClick={[Function]}
+        >
+          Global Feed
+        </a>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-link active"
+          href=""
+        >
+          <i
+            className="ion-pound"
+          />
+           
+          buff
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="article-preview"
+  >
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`>> MainView container snapshot YourFeedTab should render the conponent if the token exists 1`] = `
+<li
+  className="nav-item"
+>
+  <a
+    className="nav-link"
+    href=""
+    onClick={[Function]}
+  >
+    Your Feed
+  </a>
+</li>
+`;
+
+exports[`>> MainView container snapshot YourFeedTab should render the conponent if the token exists 2`] = `
+<li
+  className="nav-item"
+>
+  <a
+    className="nav-link active"
+    href=""
+  >
+    <i
+      className="ion-pound"
+    />
+     
+    buff
+  </a>
+</li>
+`;
