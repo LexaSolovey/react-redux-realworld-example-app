@@ -1,13 +1,11 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import { expect as chaiExpext } from 'chai';
 import configureMockStore from 'redux-mock-store';
 import {
     HOME_PAGE_LOADED,
     HOME_PAGE_UNLOADED,
     APPLY_TAG_FILTER
-  } from '../../../src/constants/actionTypes';
+} from '../../../src/constants/actionTypes';
 
 import HomeWithStore, {Home, mapDispatchToProps} from '../../../src/components/Home/';
 

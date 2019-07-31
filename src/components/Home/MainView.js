@@ -1,8 +1,8 @@
-import ArticleList from '../ArticleList';
+import ArticleListContainer from '../../containers/ArticleListContainer';
 import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
-import { CHANGE_TAB, ARTICLE_FAVORITED, ARTICLE_UNFAVORITED } from '../../constants/actionTypes';
+import { CHANGE_TAB } from '../../constants/actionTypes';
 
 export const YourFeedTab = props => {
   if (props.token) {
@@ -57,23 +57,14 @@ export const TagFilterTab = props => {
 
 const mapStateToProps = state => ({
   ...state.articleList,
-  tags: state.home.tags,
   token: state.common.token
 });
 
 export const mapDispatchToProps = dispatch => ({
   onTabClick: (tab, pager, payload) => dispatch({ type: CHANGE_TAB, tab, pager, payload }),
-  favorite: slug => dispatch({
-    type: ARTICLE_FAVORITED,
-    payload: agent.Articles.favorite(slug)
-  }),
-  unfavorite: slug => dispatch({
-    type: ARTICLE_UNFAVORITED,
-    payload: agent.Articles.unfavorite(slug)
-  })
 });
 
-export const MainView = props => {
+const MainView = props => {
   return (
     <div className="col-md-9">
       <div className="feed-toggle">
@@ -91,14 +82,7 @@ export const MainView = props => {
         </ul>
       </div>
 
-      <ArticleList
-        pager={props.pager}
-        articles={props.articles}
-        loading={props.loading}
-        articlesCount={props.articlesCount}
-        currentPage={props.currentPage}
-        favorite={props.favorite}
-        unfavorite={props.unfavorite} />
+      <ArticleListContainer />
     </div>
   );
 };

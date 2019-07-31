@@ -4,11 +4,10 @@ import { shallow } from 'enzyme';
 import { expect as chaiExpext } from 'chai';
 import configureMockStore from 'redux-mock-store';
 
-import MainViewWithStore, {YourFeedTab, GlobalFeedTab, TagFilterTab, mapDispatchToProps, MainView} from '../../../src/components/Home/MainView';
+import MainViewWithStore, {YourFeedTab, GlobalFeedTab, TagFilterTab, mapDispatchToProps} from '../../../src/components/Home/MainView';
 
-import {CHANGE_TAB, ARTICLE_UNFAVORITED, ARTICLE_FAVORITED} from '../../../src/constants/actionTypes';
+import {CHANGE_TAB} from '../../../src/constants/actionTypes';
 
-import { tagsList } from '../../data/tagsList';
 import { articles } from '../../data/articleList'; 
 
 const mockStore = configureMockStore();
@@ -22,7 +21,12 @@ describe('>> MainView container', () => {
     });
 
     it('snapshot MainView', () => {
-        const wrapper = renderer.create(<MainView token={token} onTabClick={() => {}} tag="buff" tab="feed" />);
+        const initialState = {
+            articleList: {articles},
+            common: {token}
+        };
+        const store = mockStore(initialState);
+        const wrapper = shallow(<MainViewWithStore store={store} />);
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -102,7 +106,6 @@ describe('>> MainView container', () => {
     it('MainView mapStateToProps check', () => {
         const initialState = {
             articleList: {articles},
-            home: {tags: tagsList},
             common: {token}
         };
         const store = mockStore(initialState);
@@ -116,21 +119,5 @@ describe('>> MainView container', () => {
 
         mapDispatchToProps(dispatch).onTabClick('all', null, {});
         expect(dispatch.mock.calls[0][0]).toEqual({ type: CHANGE_TAB, tab: 'all', pager: null, payload: {}});
-    });
-
-    it('MainView mapDispatchToProps favorite', () => {
-        const dispatch = jest.fn();
-
-        mapDispatchToProps(dispatch).favorite('my-articles-7fs8j1');
-        const promise = new Promise((res, rej) => {});
-        expect(dispatch.mock.calls[0][0]).toEqual({ type: ARTICLE_FAVORITED, payload: promise });
-    });
-
-    it('MainView mapDispatchToProps unfavorite', () => {
-        const dispatch = jest.fn();
-
-        mapDispatchToProps(dispatch).unfavorite('my-articles-7fs8j1');
-        const promise = new Promise((res, rej) => {});
-        expect(dispatch.mock.calls[0][0]).toEqual({ type: ARTICLE_UNFAVORITED, payload: promise });
     });
 })

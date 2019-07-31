@@ -1,4 +1,4 @@
-import ArticleList from './ArticleList';
+import ArticleListContainer from '../containers/ArticleListContainer';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import agent from '../agent';
@@ -160,13 +160,13 @@ class Profile extends React.Component {
               <div className="articles-toggle">
                 {this.renderTabs()}
               </div>
-              <ArticleList
-                pager={this.props.pager}
+              <ArticleListContainer />
+                {/* pager={this.props.pager}
                 articles={this.props.articles}
                 articlesCount={this.props.articlesCount}
                 state={this.props.currentPage}
                 favorite={this.props.favorite}
-                unfavorite={this.props.unfavorite} />
+                unfavorite={this.props.unfavorite} /> */}
             </div>
 
           </div>

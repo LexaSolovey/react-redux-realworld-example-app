@@ -1,5 +1,4 @@
 import ArticlePreview from './ArticlePreview';
-import ListPagination from './ListPagination';
 import React from 'react';
 
 export const ArticleList = props => {
@@ -27,10 +26,6 @@ export const ArticleList = props => {
           key={article.slug}
         />
       ))}
-      <ListPagination
-        pager={props.pager}
-        articlesCount={props.articlesCount}
-        currentPage={props.currentPage} />
     </div>
   );
 };
