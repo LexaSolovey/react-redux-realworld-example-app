@@ -2,7 +2,7 @@ import ArticleList from '../ArticleList';
 import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
-import { CHANGE_TAB } from '../../constants/actionTypes';
+import { CHANGE_TAB, ARTICLE_FAVORITED, ARTICLE_UNFAVORITED } from '../../constants/actionTypes';
 
 export const YourFeedTab = props => {
   if (props.token) {
@@ -62,7 +62,15 @@ const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  onTabClick: (tab, pager, payload) => dispatch({ type: CHANGE_TAB, tab, pager, payload })
+  onTabClick: (tab, pager, payload) => dispatch({ type: CHANGE_TAB, tab, pager, payload }),
+  favorite: slug => dispatch({
+    type: ARTICLE_FAVORITED,
+    payload: agent.Articles.favorite(slug)
+  }),
+  unfavorite: slug => dispatch({
+    type: ARTICLE_UNFAVORITED,
+    payload: agent.Articles.unfavorite(slug)
+  })
 });
 
 export const MainView = props => {
@@ -88,7 +96,9 @@ export const MainView = props => {
         articles={props.articles}
         loading={props.loading}
         articlesCount={props.articlesCount}
-        currentPage={props.currentPage} />
+        currentPage={props.currentPage}
+        favorite={props.favorite}
+        unfavorite={props.unfavorite} />
     </div>
   );
 };

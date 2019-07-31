@@ -6,6 +6,8 @@ import configureMockStore from 'redux-mock-store';
 
 import MainViewWithStore, {YourFeedTab, GlobalFeedTab, TagFilterTab, mapDispatchToProps, MainView} from '../../../src/components/Home/MainView';
 
+import {CHANGE_TAB, ARTICLE_UNFAVORITED, ARTICLE_FAVORITED} from '../../../src/constants/actionTypes';
+
 import { tagsList } from '../../data/tagsList';
 import { articles } from '../../data/articleList'; 
 
@@ -16,6 +18,11 @@ const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTkzNDIsInVzZXJuYW1l
 describe('>> MainView container', () => {
     it('snapshot YourFeedTab should render the conponent if the token exists', () => {
         const wrapper = renderer.create(<YourFeedTab token={token} onTabClick={() => {}} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('snapshot MainView', () => {
+        const wrapper = renderer.create(<MainView token={token} onTabClick={() => {}} tag="buff" tab="feed" />);
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -104,16 +111,26 @@ describe('>> MainView container', () => {
         expect(wrapper.props().articles).toEqual(articles);
     });
 
-    it('MainView mapDispatchToProps check', () => {
+    it('MainView mapDispatchToProps onTabClick', () => {
         const dispatch = jest.fn();
 
-        mapDispatchToProps(dispatch).onTabClick();
-        expect(dispatch.mock.calls[0][0]).toEqual({ type: 'CHANGE_TAB'});
+        mapDispatchToProps(dispatch).onTabClick('all', null, {});
+        expect(dispatch.mock.calls[0][0]).toEqual({ type: CHANGE_TAB, tab: 'all', pager: null, payload: {}});
     });
 
-    it('snapshot MainView', () => {
-        const wrapper = renderer.create(<MainView token={token} onTabClick={() => {}} tag="buff" tab="feed" />);
-        expect(wrapper).toMatchSnapshot();
+    it('MainView mapDispatchToProps favorite', () => {
+        const dispatch = jest.fn();
+
+        mapDispatchToProps(dispatch).favorite('my-articles-7fs8j1');
+        const promise = new Promise((res, rej) => {});
+        expect(dispatch.mock.calls[0][0]).toEqual({ type: ARTICLE_FAVORITED, payload: promise });
     });
-    
+
+    it('MainView mapDispatchToProps unfavorite', () => {
+        const dispatch = jest.fn();
+
+        mapDispatchToProps(dispatch).unfavorite('my-articles-7fs8j1');
+        const promise = new Promise((res, rej) => {});
+        expect(dispatch.mock.calls[0][0]).toEqual({ type: ARTICLE_UNFAVORITED, payload: promise });
+    });
 })

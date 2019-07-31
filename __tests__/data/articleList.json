@@ -17,7 +17,7 @@
             "body": "Test 2",
             "createdAt": "2019-07-02T16:13:08.400Z",
             "description": "Test 2",
-            "favorited": false,
+            "favorited": true,
             "favoritesCount": 0,
             "slug": "my-articles-7fs8j1",
             "tagList": [],

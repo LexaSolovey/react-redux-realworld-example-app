@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>> ArticleList component snapshot returns Loading in case when articles is not exist 1`] = `
+<div
+  className="article-preview"
+>
+  Loading...
+</div>
+`;
+
+exports[`>> ArticleList component snapshot returns no articles 1`] = `
+<div
+  className="article-preview"
+>
+  No articles are here... yet.
+</div>
+`;

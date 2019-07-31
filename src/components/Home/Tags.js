@@ -6,7 +6,7 @@ const Tags = ({tags, fetchArticlesByTag}) => {
 
     const {tagName, attributes} = event.target;
 
-    if(tagName === 'A' && attributes['data-tagname'].value) {
+    if (tagName === 'A' && attributes['data-tagname'].value) {
       fetchArticlesByTag(attributes['data-tagname'].value)
     }
   };

@@ -7,7 +7,9 @@ import {
   FOLLOW_USER,
   UNFOLLOW_USER,
   PROFILE_PAGE_LOADED,
-  PROFILE_PAGE_UNLOADED
+  PROFILE_PAGE_UNLOADED,
+  ARTICLE_FAVORITED,
+  ARTICLE_UNFAVORITED
 } from '../constants/actionTypes';
 
 const EditProfileSettings = props => {
@@ -71,7 +73,15 @@ const mapDispatchToProps = dispatch => ({
     type: UNFOLLOW_USER,
     payload: agent.Profile.unfollow(username)
   }),
-  onUnload: () => dispatch({ type: PROFILE_PAGE_UNLOADED })
+  onUnload: () => dispatch({ type: PROFILE_PAGE_UNLOADED }),
+  favorite: slug => dispatch({
+    type: ARTICLE_FAVORITED,
+    payload: agent.Articles.favorite(slug)
+  }),
+  unfavorite: slug => dispatch({
+    type: ARTICLE_UNFAVORITED,
+    payload: agent.Articles.unfavorite(slug)
+  })
 });
 
 class Profile extends React.Component {
@@ -150,12 +160,13 @@ class Profile extends React.Component {
               <div className="articles-toggle">
                 {this.renderTabs()}
               </div>
-
               <ArticleList
                 pager={this.props.pager}
                 articles={this.props.articles}
                 articlesCount={this.props.articlesCount}
-                state={this.props.currentPage} />
+                state={this.props.currentPage}
+                favorite={this.props.favorite}
+                unfavorite={this.props.unfavorite} />
             </div>
 
           </div>
