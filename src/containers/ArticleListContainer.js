@@ -5,7 +5,7 @@ import agent from '../agent';
 import {ARTICLE_FAVORITED, ARTICLE_UNFAVORITED } from '../constants/actionTypes';
 
 import ArticleList from './../components/ArticleList';
-import ListPagination from './../components/ListPagination';
+import ListPaginationContainer from './ListPaginationContainer';
 
 const mapStateToProps = state => ({
     ...state.articleList,
@@ -27,7 +27,6 @@ export const ArticleListContainer = (props) => {
     return (
         <Fragment>
             <ArticleList
-                pager={props.pager}
                 articles={props.articles}
                 loading={props.loading}
                 articlesCount={props.articlesCount}
@@ -35,11 +34,7 @@ export const ArticleListContainer = (props) => {
                 favorite={props.favorite}
                 unfavorite={props.unfavorite}
             />
-            <ListPagination
-                pager={props.pager}
-                articlesCount={props.articlesCount}
-                currentPage={props.currentPage}
-            />
+            <ListPaginationContainer />
         </Fragment>
     )
 }

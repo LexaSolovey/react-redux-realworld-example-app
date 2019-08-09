@@ -161,12 +161,6 @@ class Profile extends React.Component {
                 {this.renderTabs()}
               </div>
               <ArticleListContainer />
-                {/* pager={this.props.pager}
-                articles={this.props.articles}
-                articlesCount={this.props.articlesCount}
-                state={this.props.currentPage}
-                favorite={this.props.favorite}
-                unfavorite={this.props.unfavorite} /> */}
             </div>
 
           </div>

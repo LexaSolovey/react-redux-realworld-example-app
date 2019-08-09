@@ -4,7 +4,7 @@ import { expect as chaiExpext } from 'chai';
 import configureMockStore from 'redux-mock-store';
 
 import ArticleList from '../../src/components/ArticleList';
-import ListPagination from '../../src/components/ListPagination';
+import ListPaginationContainer from '../../src/containers/ListPaginationContainer';
 import ArticleListContainerWithStore, { mapDispatchToProps, ArticleListContainer } from '../../src/containers/ArticleListContainer';
 
 import { ARTICLE_UNFAVORITED, ARTICLE_FAVORITED } from '../../src/constants/actionTypes';
@@ -15,7 +15,7 @@ const mockStore = configureMockStore();
 
 const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTkzNDIsInVzZXJuYW1lIjoieG94YWNoIiwiZXhwIjoxNTY5MDgyNDcwfQ.NuIXH_W2KR6UhXunU8FX3dahFYb8bKhNAoA0ZNWENE4';
 
-describe('>> ArticleListContainer container', () => {
+describe('>> ArticleListContainer', () => {
     it('ArticleList is exist', () => {
         const wrapper = shallow(<ArticleListContainer />);
 
@@ -25,7 +25,7 @@ describe('>> ArticleListContainer container', () => {
     it('ListPagination is exist', () => {
         const wrapper = shallow(<ArticleListContainer />);
 
-        chaiExpext((wrapper).find(ListPagination)).to.have.length(1);
+        chaiExpext((wrapper).find(ListPaginationContainer)).to.have.length(1);
     });
 
 

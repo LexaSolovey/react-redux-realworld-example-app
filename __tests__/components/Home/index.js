@@ -69,7 +69,7 @@ describe('>> Home container', () => {
 
     });
 
-    it('executing of onUnload', () => {
+    it('executing of fetchArticlesByTag', () => {
         const onClickTag = jest.fn();
         const wrapper = shallow(<Home onClickTag={onClickTag} onTabClick={() => {}} onLoad={() => {}} />).instance();
         
